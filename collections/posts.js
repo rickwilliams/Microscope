@@ -28,10 +28,14 @@ if (postAttributes.url && postWithSameLink) { throw new Meteor.Error(302,
         postWithSameLink._id);
     }
     // pick out the whitelisted keys
-var post = _.extend(_.pick(postAttributes, 'url', 'title', 'message'), { userId: user._id,
-author: user.username,
-submitted: new Date().getTime()
+var post = _.extend(_.pick(postAttributes, 'url', 'title', 'message'), { 
+	userId: user._id,
+	author: user.username,
+	submitted: new Date().getTime(),
+	commentsCount: 0
 });
+
 var postId = Posts.insert(post);
+
 return postId; }
 });
