@@ -17,7 +17,7 @@ if (Posts.find().count() === 0) {
     url: 'http://sachagreif.com/introducing-telescope/',
     submitted: now - 7 * 3600 * 1000,
     commentsCount: 2,
-    upvoters: [], votes: 0
+    upvoters: [], votes: 10
   });
   Comments.insert({
     postId: telescopeId,
